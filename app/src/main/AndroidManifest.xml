@@ -50,7 +50,7 @@
         android:name="com.greymatter.yahe.helper.ApiConfig"
         android:allowBackup="false"
         android:fullBackupContent="@xml/backup_descriptor"
-        android:icon="@drawable/yahelogo"
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:supportsRtl="true"
