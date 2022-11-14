@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "338020732846",
+    "project_id": "greymatter-projects",
+    "storage_bucket": "greymatter-projects.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:338020732846:android:b0e7c523f73f10d540823f",
+        "android_client_info": {
+          "package_name": "com.greymatter.yahe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "338020732846-rhpm0l1podvtv62bpck7ct7o9mejocbs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.greymatter.yahe",
+            "certificate_hash": "d0fc39f8c50350b090c1881ee2e9e3a4c2be5bbc"
+          }
+        },
+        {
+          "client_id": "338020732846-tktkhqeco2lm619ru5kevd07vslm6fqj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfsH7CyBQ1NfRLvvzTeH87khNx4QcjCfU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "338020732846-tktkhqeco2lm619ru5kevd07vslm6fqj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
