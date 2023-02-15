@@ -6,7 +6,8 @@ public class Constant {
     //MODIFICATION PART
 
   //Admin panel url
-  public static final String MainBaseUrl = "https://yahe.greymatterworks.in/";
+  //public static final String MainBaseUrl = "https://yahe.greymatterworks.in/";
+  public static final String MainBaseUrl = "https://yahe.graymatterworks.com/";
 
   //Admin panel url or ecart multivendor website url (if exist)
   public static final String WebSiteUrl = "https://ecartmultivendorweb.thewrteam.in/";
