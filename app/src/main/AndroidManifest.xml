@@ -184,6 +184,11 @@
             android:configChanges="orientation|screenSize"
             android:windowSoftInputMode="stateAlwaysHidden|stateHidden" />
 
+        <activity android:name="com.payu.custombrowser.PreLollipopPaymentsActivity"
+            android:exported="true"
+            tools:node="merge" />
+
+
 
         <provider
             android:name="androidx.core.content.FileProvider"
