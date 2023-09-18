@@ -56,7 +56,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
-        tools:replace="android:usesCleartextTraffic">
+        tools:replace="android:usesCleartextTraffic,android:allowBackup">
         <activity
             android:name="com.greymatter.yahe.activity.PaymentActivity"
             android:exported="true" />

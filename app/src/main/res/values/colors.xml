@@ -44,5 +44,6 @@
 
     <color name="albumSheetBottom">#FFFFFF</color>
     <color name="albumSheetLayer">#FFFFFF</color>
+    <color name="light_grey">#AAA6A6</color>
 
 </resources>

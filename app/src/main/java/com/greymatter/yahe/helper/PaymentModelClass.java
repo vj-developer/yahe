@@ -5,15 +5,10 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.util.Log;
-import android.widget.Toast;
 
-import com.payumoney.core.PayUmoneyConfig;
-import com.payumoney.core.PayUmoneyConstants;
-import com.payumoney.core.PayUmoneySdkInitializer;
-import com.payumoney.core.entity.TransactionResponse;
-import com.payumoney.sdkui.ui.utils.PayUmoneyFlowManager;
-import com.payumoney.sdkui.ui.utils.ResultModel;
+import com.greymatter.yahe.R;
+import com.greymatter.yahe.activity.MainActivity;
+import com.greymatter.yahe.fragment.CheckoutFragment;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,15 +21,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.greymatter.yahe.R;
-import com.greymatter.yahe.activity.MainActivity;
-import com.greymatter.yahe.fragment.CheckoutFragment;
-import com.greymatter.yahe.fragment.WalletTransactionFragment;
-
 public class PaymentModelClass {
     public final Activity activity;
     final String TAG = CheckoutFragment.class.getSimpleName();
-    public PayUmoneySdkInitializer.PaymentParam mPaymentParams;
+    //public PayUmoneySdkInitializer.PaymentParam mPaymentParams;
     public String status, udf5, udf4, udf3, udf2, udf1, email, firstName, productInfo, amount, txnId, key, addedOn, msg, Product, address;
     public static Map<String, String> sendParams;
     ProgressDialog mProgressDialog;
@@ -98,16 +88,16 @@ public class PaymentModelClass {
     }
 
     public void OnPayClick(Activity activity, Map<String, String> sendParams, String OrderType, String amount) {
-        try {
+        /*try {
 
             PaymentModelClass.sendParams = sendParams;
 
-            PayUmoneyConfig payUmoneyConfig = PayUmoneyConfig.getInstance();
+            //PayUmoneyConfig payUmoneyConfig = PayUmoneyConfig.getInstance();
 
             //Use this to set your custom text on result screen button
-            payUmoneyConfig.setDoneButtonText("Done");
+            //payUmoneyConfig.setDoneButtonText("Done");
             //Use this to set your custom title for the activity
-            payUmoneyConfig.setPayUmoneyActivityTitle(activity.getResources().getString(R.string.app_name));
+            //payUmoneyConfig.setPayUmoneyActivityTitle(activity.getResources().getString(R.string.app_name));
             PayUmoneySdkInitializer.PaymentParam.Builder builder = new PayUmoneySdkInitializer.PaymentParam.Builder();
             String txnId = System.currentTimeMillis() + "";
             String phone = sendParams.get(Constant.MOBILE);
@@ -158,12 +148,12 @@ public class PaymentModelClass {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
 
 
     }
 
-    public PayUmoneySdkInitializer.PaymentParam calculateServerSideHashAndInitiatePayment1(final PayUmoneySdkInitializer.PaymentParam paymentParam) {
+/*    public PayUmoneySdkInitializer.PaymentParam calculateServerSideHashAndInitiatePayment1(final PayUmoneySdkInitializer.PaymentParam paymentParam) {
         StringBuilder stringBuilder = new StringBuilder();
         HashMap<String, String> params = paymentParam.getParams();
         try {
@@ -189,11 +179,11 @@ public class PaymentModelClass {
             e.printStackTrace();
         }
         return paymentParam;
-    }
+    }*/
 
     public void TransactionMethod(Intent data, Activity activity, String from) {
         // System.out.println("========transaction  call");
-        TransactionResponse transactionResponse = data.getParcelableExtra(PayUmoneyFlowManager.INTENT_EXTRA_TRANSACTION_RESPONSE);
+        /*TransactionResponse transactionResponse = data.getParcelableExtra(PayUmoneyFlowManager.INTENT_EXTRA_TRANSACTION_RESPONSE);
         ResultModel resultModel = data.getParcelableExtra(PayUmoneyFlowManager.ARG_RESULT);
 
         // Check which object is non-null
@@ -251,7 +241,7 @@ public class PaymentModelClass {
             Log.d(TAG, "Error response : " + resultModel.getError().getTransactionResponse());
         } else {
             Log.d(TAG, "Both objects are null!");
-        }
+        }*/
     }
 
     public void PlaceOrder(final Activity activity, final String paymentType, final String txnid, boolean isSuccess, final Map<String, String> sendParams, final String status) {

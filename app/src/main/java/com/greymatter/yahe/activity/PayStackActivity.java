@@ -14,18 +14,6 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-
-import co.paystack.android.Paystack;
-import co.paystack.android.PaystackSdk;
-import co.paystack.android.Transaction;
-import co.paystack.android.model.Card;
-import co.paystack.android.model.Charge;
 import com.greymatter.yahe.R;
 import com.greymatter.yahe.fragment.WalletTransactionFragment;
 import com.greymatter.yahe.helper.ApiConfig;
@@ -33,6 +21,13 @@ import com.greymatter.yahe.helper.Constant;
 import com.greymatter.yahe.helper.PaymentModelClass;
 import com.greymatter.yahe.helper.Session;
 import com.greymatter.yahe.ui.CreditCardEditText;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
 
 public class PayStackActivity extends AppCompatActivity {
     public String email, cardNumber, cvv;
@@ -46,8 +41,8 @@ public class PayStackActivity extends AppCompatActivity {
     double payableAmount = 0;
     String from;
     //variables
-    private Card card;
-    private Charge charge;
+    //private Card card;
+    //private Charge charge;
     private EditText emailField;
     private CreditCardEditText cardNumberField;
     private EditText expiryMonthField;
@@ -59,7 +54,7 @@ public class PayStackActivity extends AppCompatActivity {
     ImageView imageHome;
 
     public static void setPaystackKey(String publicKey) {
-        PaystackSdk.setPublicKey(publicKey);
+        //PaystackSdk.setPublicKey(publicKey);
     }
 
     @Override
@@ -71,7 +66,7 @@ public class PayStackActivity extends AppCompatActivity {
         setPaystackKey(Constant.PAYSTACK_KEY);
         activity = PayStackActivity.this;
         session = new Session(activity);
-        PaystackSdk.initialize(activity);
+        //PaystackSdk.initialize(activity);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -121,7 +116,7 @@ public class PayStackActivity extends AppCompatActivity {
      */
     private void performCharge() {
         //create a Charge object
-        String[] amount = String.valueOf(payableAmount * 100).split("\\.");
+        /*String[] amount = String.valueOf(payableAmount * 100).split("\\.");
         charge = new Charge();
         charge.setCard(card); //set the card to charge
         charge.setEmail(email); //dummy email address
@@ -150,7 +145,7 @@ public class PayStackActivity extends AppCompatActivity {
                 }
                 Toast.makeText(activity, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
     }
 
     private boolean validateForm() {
@@ -215,10 +210,10 @@ public class PayStackActivity extends AppCompatActivity {
             //int expiryMonth = 11; //any month in the future
             //int expiryYear = 18; // any year in the future
             //String cvv = "408";
-            card = new Card(cardNumber, expiryMonth, expiryYear, cvv);
-
+            //card = new Card(cardNumber, expiryMonth, expiryYear, cvv);
+            boolean card  = false;
             paymentModelClass.showProgressDialog();
-            if (card.isValid()) {
+            if (card) { //card.isValid()
                 performCharge();
             } else {
                 paymentModelClass.hideProgressDialog();

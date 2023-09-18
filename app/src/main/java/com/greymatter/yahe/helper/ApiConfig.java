@@ -58,6 +58,13 @@ import com.google.android.gms.location.LocationSettingsStatusCodes;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.FirebaseApp;
 import com.google.gson.Gson;
+import com.greymatter.yahe.R;
+import com.greymatter.yahe.helper.album.Album;
+import com.greymatter.yahe.helper.album.AlbumConfig;
+import com.greymatter.yahe.model.Attachment;
+import com.greymatter.yahe.model.OrderTracker;
+import com.greymatter.yahe.model.Product;
+import com.greymatter.yahe.model.Slider;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -77,17 +84,9 @@ import java.util.Map;
 
 import javax.crypto.spec.SecretKeySpec;
 
-import co.paystack.android.PaystackSdk;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import com.greymatter.yahe.R;
-import com.greymatter.yahe.helper.album.Album;
-import com.greymatter.yahe.helper.album.AlbumConfig;
-import com.greymatter.yahe.model.Attachment;
-import com.greymatter.yahe.model.OrderTracker;
-import com.greymatter.yahe.model.Product;
-import com.greymatter.yahe.model.Slider;
 
 @SuppressWarnings("deprecation")
 public class ApiConfig extends Application {
@@ -875,7 +874,7 @@ public class ApiConfig extends Application {
         } else {
             appEnvironment = AppEnvironment.SANDBOX;
         }
-        PaystackSdk.initialize(activity);
+        //PaystackSdk.initialize(activity);
     }
 
     @Override
